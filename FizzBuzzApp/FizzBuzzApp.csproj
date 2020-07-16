@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code.html" />
+    <Content Include="favicon.png" />
     <Content Include="Index.html" />
     <Content Include="Solve.html" />
     <Content Include="Web.config" />
