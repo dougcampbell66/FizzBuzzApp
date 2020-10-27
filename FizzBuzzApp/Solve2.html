@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Fizz Buzz | Douglas Campbell</title>
+
+    <link rel="icon" href="IMG/fizz150.png" />
+
+    <!-- CSS -->
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/prism.css" rel="stylesheet" />
+    <script src="Scripts/prism.js"></script>
+
+
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h4 class="masthead-brand">Fizz Buzz JavaScript Exercise</h4>
+                <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="\index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Solve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//github.com/BethOlmo06/Fizz_Buzz" target="_blank">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//betholmoblog.azurewebsites.net/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//betholmo-portfolio.netlify.app/" target="_blank">Portfolio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">JS Exercises</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="//sum-fears-js.netlify.app/index.html" target="_blank">Sum of All Fears</a>
+                            <a class="dropdown-item" href="//sunset-hills-js.netlify.app/index.html" target="_blank">Sunset Hills</a>
+                            <a class="dropdown-item" href="//palindrome-js.netlify.app/index.html" target="_blank">Amore Roma</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="row">
+                <div class="col bg-white p-5">
+                    <h3 class="text-black-50">Choose your numbers.</h3>
+                    <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
+                    <br />
+
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <input type="number" class="form-control numOnly" id="numIn1" value="3">
+                        </div>
+                        <div class="col-4">
+                            <input type="number" class="form-control numOnly" id="numIn2" value="5">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="row mt-xl-5">
+                        <div class="col">
+                            <h5 id="results" class="text-black-50"></h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-xl-5">
+                <div class="col-md-4 offset-4">
+                    <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
+                </div>
+            </div>
+
+            <div class="row mt-xl-5">
+                <div class="col-md-4 offset-4">
+                    <a class="btn btn-lg elWide" id="btnCode" href="\code.html" role="button">See The Code</a>
+                </div>
+            </div>
+        </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="Scripts/jquery-3.0.0.js"></script>
+
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/prism.js"></script>
+
+    <script src="Scripts/solve.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!--<script>
+        $(".numOnly").keydown(function (event) {
+            // Allow backspace, tab, and delete
+            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
+                // let it happen
+            }
+            else {
+                // Ensure that it is a number and stop the keypress
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
+                }
+            }
+        });
+    </script>-->
+
+
+</body>
+</html>
