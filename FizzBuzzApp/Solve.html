@@ -46,73 +46,77 @@
         </div>
     </nav>
 
-    <main role="main" class="inner cover">
+    <div class="container">
         <div class="row">
-            <div class="col bg-white p-5">
-                <h3 class="text-black-50">Choose your numbers.</h3>
-                <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
-                <br />
-
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <input type="number" class="form-control numOnly" id="numIn1" value="3">
-                    </div>
-                    <div class="col-4">
-                        <input type="number" class="form-control numOnly" id="numIn2" value="5">
-                    </div>
-                    <div class="col-4">
-                        <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
-                    </div>
-                    <br />
-                </div>
-
-                <div class="row mt-xl-5">
-                    <div class="col">
-                        <h5 id="results" class="text-black-50"></h5>
-                    </div>
-
-                </div>
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">FizzBuzz Coding Challenge</h1>
             </div>
         </div>
+                <hr />
 
-        <div class="row mt-xl-5">
-            <div class="col-md-4 offset-4">
-                <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
-            </div>
-        </div>
+                <main role="main" class="inner cover">
+                    <div class="row">
+                        <div class="col bg-white p-5">
+                            <h3 class="text-black-50">Choose your numbers.</h3>
+                            <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
+                            <br />
 
-        <div class="row mt-xl-5">
-            <div class="col-md-4 offset-4">
-                <a class="btn btn-lg elWide" id="btnCode" href="\code.html" role="button">See The Code</a>
-            </div>
-        </div>
-    </main>
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
-        </div>
-    </footer>
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <input type="number" class="form-control numOnly" id="numIn1" value="3">
+                                </div>
+                                <div class="col-4">
+                                    <input type="number" class="form-control numOnly" id="numIn2" value="5">
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
+                                </div>
+                                <br />
+                            </div>
 
-    <script src="SCRIPTS/jquery.js"></script>
-    <script src="SCRIPTS/bootstrap.bundle.min.js"></script>
-    <script src="SCRIPTS/bootstrap.min.js"></script>
-    <script src="SCRIPTS/prism.js"></script>
-    <script src="SCRIPTS/solve.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script>
-        $(".numOnly").keydown(function (event) {
-            // Allow backspace, tab, and delete
-            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
-                // let it happen
-            }
-            else {
-                // Ensure that it is a number and stop the keypress
-                if (event.keyCode < 48 || event.keyCode > 57) {
-                    Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
-                }
-            }
-        });
-    </script>
+                            <div class="row mt-xl-5">
+                                <div class="col">
+                                    <h5 id="results" class="text-black-50"></h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-xl-5">
+                        <div class="col-md-4 offset-4">
+                            <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
+                        </div>
+                    </div>
+
+                    <div class="row mt-xl-5">
+                        <div class="col-md-4 offset-4">
+                            <a class="btn btn-lg elWide" id="btnCode" href="\code.html" role="button">See The Code</a>
+                        </div>
+                    </div>
+                </main>
+    </div>
+
+                <script src="SCRIPTS/jquery.js"></script>
+                <script src="SCRIPTS/bootstrap.bundle.min.js"></script>
+                <script src="SCRIPTS/bootstrap.min.js"></script>
+                <script src="SCRIPTS/prism.js"></script>
+                <script src="SCRIPTS/solve.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+                <script>
+                    $(".numOnly").keydown(function (event) {
+                        // Allow backspace, tab, and delete
+                        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
+                            // let it happen
+                        }
+                        else {
+                            // Ensure that it is a number and stop the keypress
+                            if (event.keyCode < 48 || event.keyCode > 57) {
+                                Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
+                            }
+                        }
+                    });
+                </script>
 
 </body>
 </html>
