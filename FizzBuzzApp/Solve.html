@@ -52,65 +52,118 @@
                 <h1 class="mt-5">FizzBuzz Coding Challenge</h1>
             </div>
         </div>
-                <hr />
+        <hr />
+        <h4>Enter two integers between 1 and 100. Enter 100 as an Upper Bound</h4>
+        <form id="mainF" data-aos="fade-up">
+            <input id="fbInput1" placeholder="Enter First Number" />
 
-                <main role="main" class="inner cover">
-                    <div class="row">
-                        <div class="col bg-white p-5">
-                            <h3 class="text-black-50">Choose your numbers.</h3>
-                            <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
-                            <br />
+            <input id="fbInput2" placeholder="Enter Second Number" />
 
-                            <div class="row justify-content-center">
-                                <div class="col-4">
-                                    <input type="number" class="form-control numOnly" id="numIn1" value="3">
-                                </div>
-                                <div class="col-4">
-                                    <input type="number" class="form-control numOnly" id="numIn2" value="5">
-                                </div>
-                                <div class="col-4">
-                                    <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
-                                </div>
-                                <br />
-                            </div>
+            <input id="boundIn" placeholder="Enter an Upper Bound" />
 
-                            <div class="row mt-xl-5">
-                                <div class="col">
-                                    <h5 id="results" class="text-black-50"></h5>
-                                </div>
+            <br />
+            <br />
+            <button id="btnFB" class="btn btn-dark">Run FizzBuzz</button>
+            <button id="btnClear" class="btn btn-danger">Clear</button>
+        </form>
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-xl-5">
-                        <div class="col-md-4 offset-4">
-                            <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
-                        </div>
-                    </div>
-                </main>
+        <br />
+        <div id="fbOut"></div>
     </div>
-
-                <script src="SCRIPTS/jquery.js"></script>
-                <script src="SCRIPTS/bootstrap.bundle.min.js"></script>
-                <script src="SCRIPTS/bootstrap.min.js"></script>
-                <script src="SCRIPTS/prism.js"></script>
-                <script src="SCRIPTS/solve.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-                <script>
-                    $(".numOnly").keydown(function (event) {
-                        // Allow backspace, tab, and delete
-                        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
-                            // let it happen
-                        }
-                        else {
-                            // Ensure that it is a number and stop the keypress
-                            if (event.keyCode < 48 || event.keyCode > 57) {
-                                Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
-                            }
-                        }
-                    });
-                </script>
 
 </body>
 </html>
+<!-- Bootstrap core JavaScript -->
+<script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+    $("#mainF").submit(function (e) {
+        e.preventDefault();
+    });
+
+    $("#btnFB").on("click", function () {
+        let fizzNum = parseInt($("#fbInput1").val());
+        let buzzNum = parseInt($("#fbInput2").val());
+        let output = ""
+
+        for (let x = 1; x <= parseInt($("#boundIn").val()); x++) {
+            if (x % fizzNum == 0 && x % buzzNum == 0) {
+                output += "<span class = 'fizzbuzz'>FizzBuzz</span>, ";
+            }
+            else if (x % fizzNum == 0) {
+                output += "<span class = 'fizz'>Fizz</span>, "
+            }
+            else if (x % buzzNum == 0) {
+                output += "<span class = 'buzz'>Buzz</span>, "
+            }
+            else {
+                output += x + ", ";
+            }
+        }
+
+        output = output.substr(0, output.length - 2)
+
+        $("#fbOut").html(`<p class="animate__animated animate__fadeIn">${output}</p>`);
+    });
+
+    $("#btnClear").on("click", function () {
+        $("#fbInput1").val("");
+        $("#fbInput2").val("");
+        $("#boundIn").val("");
+        $("#fbOut").text("");
+    });
+</script>
+
+<!--<main role="main" class="inner cover">
+    <div class="row">
+        <div class="col bg-white p-5">
+            <h3 class="text-black-50">Choose your numbers.</h3>
+            <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
+            <br />
+
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <input type="number" class="form-control numOnly" id="numIn1" value="3">
+                </div>
+                <div class="col-4">
+                    <input type="number" class="form-control numOnly" id="numIn2" value="5">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
+                </div>
+                <br />
+            </div>
+
+            <div class="row mt-xl-5">
+                <div class="col">
+                    <h5 id="results" class="text-black-50"></h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-xl-5">
+        <div class="col-md-4 offset-4">
+            <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    $(".numOnly").keydown(function (event) {
+        // Allow backspace, tab, and delete
+        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
+            // let it happen
+        }
+        else {
+            // Ensure that it is a number and stop the keypress
+            if (event.keyCode < 48 || event.keyCode > 57) {
+                Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
+            }
+        }
+    });
+</script>-->

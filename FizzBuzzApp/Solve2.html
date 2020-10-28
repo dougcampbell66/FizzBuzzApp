@@ -1,134 +1,140 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Fizz Buzz | Douglas Campbell</title>
 
-    <link rel="icon" href="IMG/fizz150.png" />
+    <title>FizzBuzz</title>
+    <link rel="icon" href="dc2.png" />
 
-    <!-- CSS -->
-    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="CSS/prism.css" rel="stylesheet" />
-    <script src="Scripts/prism.js"></script>
 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css' id="Open">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 
 </head>
-<body class="text-center">
-    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <h4 class="masthead-brand">Fizz Buzz JavaScript Exercise</h4>
-                <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="\index.html">Home</a>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Index.html">FizzBuzz Challenge</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Index.html">
+                            Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Solve</a>
+                        <a class="nav-link" href="/Solve.html">Solve</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="\code.html">Code</a>
+                        <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//github.com/BethOlmo06/Fizz_Buzz" target="_blank">Git</a>
+                        <a class="nav-link" href="https://github.com/dougcampbell66/FizzBuzzApp" target="_blank">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//betholmoblog.azurewebsites.net/">Blog</a>
+                        <a class="nav-link" href="https://douglascampbell.netlify.app/" target="_blank">Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="//betholmo-portfolio.netlify.app/" target="_blank">Portfolio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">JS Exercises</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="//sum-fears-js.netlify.app/index.html" target="_blank">Sum of All Fears</a>
-                            <a class="dropdown-item" href="//sunset-hills-js.netlify.app/index.html" target="_blank">Sunset Hills</a>
-                            <a class="dropdown-item" href="//palindrome-js.netlify.app/index.html" target="_blank">Amore Roma</a>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <main role="main" class="inner cover">
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-2"></div>-->
+            <!--<--><!--div class="col"></div>-->
+            <div class="col">
+                <input id="fbInput1" class="form-control" placeholder="Enter Fizz Number" />
+            </div>
+            <div class="col">
+                <input id="fbInput2" class="form-control" placeholder="Enter Buzz Number" />
+            </div>
+
+        </div>
+        <br />
+        <div class="container" style="color:snow">
             <div class="row">
-                <div class="col bg-white p-5">
-                    <h3 class="text-black-50">Choose your numbers.</h3>
-                    <h5 class="text-black-50">Enter two whole numbers below, or let the program choose.</h5>
-                    <br />
+                <div class="col-lg-3"></div>
 
-                    <div class="row justify-content-center">
-                        <div class="col-4">
-                            <input type="number" class="form-control numOnly" id="numIn1" value="3">
-                        </div>
-                        <div class="col-4">
-                            <input type="number" class="form-control numOnly" id="numIn2" value="5">
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-success elWide" id="buzzIt">Buzz It!</button>
-                        </div>
-                        <br />
-                    </div>
+                <button id="btnFB" class="btn btn-dark btnStyle" style="margin-right:10px; border:double">Solve FizzBuzz</button>
 
-                    <div class="row mt-xl-5">
-                        <div class="col">
-                            <h5 id="results" class="text-black-50"></h5>
-                        </div>
-
-                    </div>
-                </div>
+                <button id="btnClear" class="btn btn-dark btnStyle" style="margin-left:55px; border:double">Clear</button>
             </div>
+        </div>
 
-            <div class="row mt-xl-5">
-                <div class="col-md-4 offset-4">
-                    <button class="btn btn-lg btn-secondary elWide" id="clearIt">Clear</button>
-                </div>
+        <br />
+        <br />
+        <div class="row" style="color:snow">
+            <div class="col-2"></div>
+            <div class="col-lg-8">
+                <div id="fbOut"></div>
             </div>
+        </div>
 
-            <div class="row mt-xl-5">
-                <div class="col-md-4 offset-4">
-                    <a class="btn btn-lg elWide" id="btnCode" href="\code.html" role="button">See The Code</a>
-                </div>
-            </div>
-        </main>
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
-            </div>
-        </footer>
+
     </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
+    <script>
+        $("#btnFB").on("click", function () {
+            let fizzNum = parseInt($("#fbInput1").val());
+            let buzzNum = parseInt($("#fbInput2").val());
 
-    <script src="Scripts/jquery-3.0.0.js"></script>
+            let fizzMod = 0;
+            let buzzMod = 0;
+            let output = new Array();
 
-    <script src="Scripts/bootstrap.bundle.min.js"></script>
+            for (let loop = 1; loop <= 100; loop++) {
+                fizzMod = loop % fizzNum;
+                buzzMod = loop % buzzNum;
 
-    <script src="Scripts/bootstrap.min.js"></script>
-
-    <script src="Scripts/prism.js"></script>
-
-    <script src="Scripts/solve.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-    <!--<script>
-        $(".numOnly").keydown(function (event) {
-            // Allow backspace, tab, and delete
-            if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
-                // let it happen
-            }
-            else {
-                // Ensure that it is a number and stop the keypress
-                if (event.keyCode < 48 || event.keyCode > 57) {
-                    Swal.fire('Please enter a whole number from 0 to 9.'), event.preventDefault();
+                if (fizzMod == 0 && buzzMod == 0) {
+                    output.push(`${loop}: <span class = 'fizzbuzz'> FizzBuzz</span>`)
                 }
+                else if (fizzMod == 0) {
+                    output.push(`${loop}: <span class = 'fizz'> Fizz</span>`)
+                }
+                else if (buzzMod == 0) {
+                    output.push(`${loop}: <span class = 'buzz'> Buzz</span>`)
+                }
+                else {
+                    output.push(`${loop}: none`);
+                }
+
             }
+            $("#fbOut").html(output.join(`<span class = 'divide'> | </span>`));
+
         });
-    </script>-->
+
+        $("#btnClear").on("click", function () {
+            $("#fbInput1, #fbInput2").val("");
+            $("#fbOut").text("");
+        })
+    </script>
+
 
 
 </body>
+
 </html>
