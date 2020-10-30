@@ -2,21 +2,18 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Fizz Buzz</title>
-
+    <title>FizzBuzz</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="icon" href="dc2.png" />
+    <link href="Content/prism.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
@@ -48,27 +45,76 @@
             </div>
         </div>
     </nav>
-
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">FizzBuzz Coding Challenge</h1>
                 <hr />
-                <p class="lead">You need to use a Syntax Highlighter - Prism.js is default</p>
+                <p class="lead">See FizzBuzz Code Below</p>
                 <ul class="list-unstyled">
-                    <li>Code with highlighter</li>
-                    <li>Will display on this page</li>
+                    <li>Code Display by PrismJs</li>
                 </ul>
             </div>
         </div>
-    </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12 col-md-3">
+                <pre><code class="language-css">
+    <script>
+        $("#mainF").submit(function (e) {
+            e.preventDefault();
+        });
 
+        $("#btnFB").on("click", function () {
+            let fizzNum = parseInt($("#fbInput1").val());
+            let buzzNum = parseInt($("#fbInput2").val());
+            let output = ""
+
+            for (let x = 1; x <= parseInt($("#boundIn").val()); x++) {
+                if (x % fizzNum == 0 && x % buzzNum == 0) {
+                    output += "<span class = 'fizzbuzz'>FizzBuzz</span>, ";
+                }
+                else if (x % fizzNum == 0) {
+                    output += "<span class = 'fizz'>Fizz</span>, "
+                }
+                else if (x % buzzNum == 0) {
+                    output += "<span class = 'buzz'>Buzz</span>, "
+                }
+                else {
+                    output += x + ", ";
+                }
+            }
+
+            output = output.substr(0, output.length - 2)
+
+            $("#fbOut").html(`<p class="animate__animated animate__fadeIn">${output}</p>`);
+        });
+
+        $("#btnClear").on("click", function () {
+            $("#fbInput1").val("");
+            $("#fbInput2").val("");
+            $("#boundIn").val("");
+            $("#fbOut").text("");
+        });
+    </script>
+
+
+
+
+
+
+</code></pre>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="Scripts/prism.js"></script>
+    <!--<script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js"></script>
+    <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>-->
 
 </body>
-
 </html>
